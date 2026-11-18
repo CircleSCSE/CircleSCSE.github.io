@@ -35,6 +35,6 @@
 <br/><br/>
 ## [ How i used FM, AI ]
 ---
-<b>1. 🧶 SNS Marketing Automation 2 [ 키워드 : AI 활용, 기획, N8N ]</b> : <a href="https://github.com/CircleSCSE/SNS_Marketing_Automation_2/tree/main"><b>[Github Link - Click]</b></a>
+1. 🧶 SNS Marketing Automation 2 [ 키워드 : AI 활용, 기획, N8N ] : <a href="https://github.com/CircleSCSE/SNS_Marketing_Automation_2/tree/main"><b>[Github Link - Click]</b></a>
 
 <br/>
