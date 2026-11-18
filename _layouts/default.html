@@ -1,38 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CircleSCSE</title>
   <style>
     body {
-      font-size: 20px;
+      font-size: 18px;
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Malgun Gothic", sans-serif;
       line-height: 1.6;
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 40px 20px;
       color: #333333;
       word-break: keep-all;
     }
+
+    /* 상단 네비게이션 & 다운로드 버튼 스타일 */
+    header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #2563eb; /* 신뢰감을 주는 블루 */
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-download:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* PDF 뷰어 섹션 스타일 */
+    .pdf-preview-section {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 2px solid #f0f0f0;
+    }
+
+    .pdf-preview-section h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+
+    .pdf-container {
+      width: 100%;
+      height: 800px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      background-color: #f8fafc;
+    }
+
+    .pdf-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-mobile-fallback {
+      display: none; /* 모바일에서 뷰어가 안 보일 때를 위한 알림 */
+      text-align: center;
+      padding: 20px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .pdf-container {
+        height: 500px; /* 모바일에서는 높이 축소 */
+      }
+      .pdf-mobile-fallback {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <!-- 상단 네비게이션에 다운로드 버튼 배치 -->
+    <!-- 상단에 위치한 깔끔한 다운로드 버튼 -->
     <a href="{{ '/assets/CV.pdf' | relative_url }}" download="원성범_CV.pdf" class="btn-download">
-      PDF 다운로드
+      📥 CV 다운로드 (PDF)
     </a>
   </header>
+
   <main>
-    <!-- README.md의 내용이 들어가는 자리 -->
+    <!-- README.md 본문이 렌더링되는 곳 -->
     {{ content }}
-    <!-- 필요하다면 본문 아래에 PDF 미리보기 영역 배치 -->
+
+    <!-- PDF 임베딩 영역 -->
     <section class="pdf-preview-section">
-      <h3>포트폴리오 문서</h3>
-      <object data="{{ '/assets/CV.pdf' | relative_url }}" type="application/pdf" width="100%" height="800px">
-        <p>미리보기를 지원하지 않는 기기입니다. <a href="{{ '/assets/portfolio.pdf' | relative_url }}" download>PDF 다운로드</a></p>
-      </object>
+      <h3>📄 CV 미리보기</h3>
+      
+      <div class="pdf-container">
+        <!-- iframe이 object보다 브라우저 호환성이 훨씬 우수합니다 -->
+        <iframe src="{{ '/assets/CV.pdf' | relative_url }}"></iframe>
+      </div>
+
+      <div class="pdf-mobile-fallback">
+        <p>화면에서 PDF가 보이지 않으시나요? 
+          <a href="{{ '/assets/CV.pdf' | relative_url }}" download="원성범_CV.pdf" style="color: #2563eb; font-weight: bold;">
+            여기를 눌러 직접 다운로드
+          </a>하세요.
+        </p>
+      </div>
     </section>
   </main>
+
 </body>
 </html>
