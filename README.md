@@ -1,13 +1,23 @@
-# [ 원성범 : 웹 포트폴리오 ]
+# [ 원성범 / CircleSCSE : 웹 포트폴리오 ]
 ---
-
-* CV 보기 : <a href="https://canva.link/5v40lh7gwromfsx"><b>[CV 링크]</b></a>
-
+* <b>Interests :</b> Machine Learning, Computer Vision, N8N
+* <b>Github :</b> <a href="https://github.com/CircleSCSE"><b>[Link]</b></a>
 <br/><br/>
 
 ## [ What i learned from experiences ]
 ---
 <b>1. 💲 주류소매점에서의 7개월 근무 [ 키워드 : 고용주 및 고객과의 소통, 세일즈 ]</b> : <a href="https://github.com/CircleSCSE/long-term_part-time_job_experience"><b>[Github Link]</b></a>
+
+
+<div style="width: 100%; aspect-ratio: 16 / 9; margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+  <iframe 
+    src="https://www.youtube.com/embed/xrBq2rFm3MA" 
+    title="YouTube video player" 
+    style="width: 100%; height: 100%; border: 0;" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+</div>
 
 <br/><br/>
 ## [ About ML ]
