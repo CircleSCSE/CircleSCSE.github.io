@@ -1,5 +1,5 @@
 # [ 원성범 / CircleSCSE : 웹 포트폴리오 ]
-MLOps Engineer
+
 ---
 * Interests : Machine Vision, Computer Vision, MLOps, Embedded AI
 * Github : <a href="https://github.com/CircleSCSE"><b>[My Github Link - Click]</b></a>
